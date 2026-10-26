@@ -1,0 +1,156 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #173d32;
+  background: #f8f7f2;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input { font: inherit; }
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  background: #173d32;
+  color: white;
+  gap: 20px;
+}
+
+.logo { font-size: 21px; font-weight: 700; }
+.logo span { color: #d9c69a; margin-right: 8px; }
+
+nav { display: flex; align-items: center; gap: 24px; }
+nav button, .categorias button {
+  cursor: pointer;
+  border: 1px solid #527064;
+  background: transparent;
+  color: inherit;
+  padding: 10px 15px;
+  border-radius: 24px;
+}
+
+.hero {
+  padding: 85px 9%;
+  background: linear-gradient(110deg, #173d32, #315b48);
+  color: white;
+}
+
+.etiqueta {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #a48b58;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+.hero h1 { font-size: clamp(42px, 6vw, 70px); line-height: 1.1; }
+.hero p { color: #dce6df; max-width: 430px; line-height: 1.8; }
+
+.botao, .emprestar {
+  display: inline-block;
+  background: #d9c69a;
+  color: #173d32;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.catalogo { padding: 65px 7%; }
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.cabecalho h2 { font-size: clamp(25px, 4vw, 36px); }
+
+.busca {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #dce1d8;
+  border-radius: 10px;
+  background: white;
+  margin: 20px 0;
+  outline-color: #47765e;
+}
+
+.categorias { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.categorias button { color: #315b48; border-color: #dce1d8; }
+.categorias button.ativa { background: #173d32; color: white; }
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.livro {
+  background: white;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ecebe4;
+  min-width: 0;
+}
+
+.capa { position: relative; }
+.capa img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #ecebe4;
+}
+
+.favorito {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  border: 0;
+  background: white;
+  color: #a34444;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.categoria { display: block; color: #8b7954; font-size: 12px; margin-top: 14px; }
+.livro h3 { margin-bottom: 5px; font-size: 19px; }
+.livro p { font-size: 13px; color: #748078; min-height: 32px; }
+.status { color: #26744c; font-size: 12px; }
+.status.indisponivel { color: #b34c4c; }
+
+.emprestar { width: 100%; margin-top: 14px; font-size: 12px; }
+.emprestar:disabled { background: #e6e6e1; color: #777; cursor: not-allowed; }
+
+.meus-emprestimos { margin-top: 55px; padding: 25px; background: #eeefe7; border-radius: 14px; }
+.sobre { text-align: center; padding: 55px 20px; background: #e8e9df; }
+footer { background: #173d32; color: #dce6df; text-align: center; padding: 25px; font-size: 12px; }
+
+@media (max-width: 800px) {
+  .grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .topo { flex-wrap: wrap; }
+  nav { gap: 10px; flex-wrap: wrap; }
+  .hero { padding: 60px 7%; }
+}
+
+@media (max-width: 420px) {
+  .grade { grid-template-columns: 1fr; }
+  .capa img { height: 320px; }
+  .cabecalho { align-items: flex-start; flex-direction: column; }
+}
